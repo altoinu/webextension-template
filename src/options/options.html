@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Extension Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Settings Workbench</h1>
+
+      <div class="form-group">
+        <label for="username">Username Configuration:</label>
+        <input type="text" id="username" placeholder="Enter username..." />
+      </div>
+
+      <div class="form-group">
+        <label class="checkbox-label"> <input type="checkbox" id="feature-toggle" /> Enable Experimental Feature </label>
+      </div>
+
+      <div class="actions">
+        <button id="save-btn">Save Settings</button>
+        <span id="status-message"></span>
+      </div>
+    </div>
+
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

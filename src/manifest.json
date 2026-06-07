@@ -1,0 +1,30 @@
+{
+  "action": {
+    "default_icon": "icons/icon.svg",
+    "default_popup": "popup/popup.html",
+    "default_title": "WebExtension Template"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "data_collection_permissions": {
+        "required": ["none"]
+      },
+      "id": "webextension-template@altoinu.com",
+      "update_url": "https://raw.githubusercontent.com/altoinu/webextension-template/main/updates.json"
+    }
+  },
+  "description": "A clean, modern boilerplate for building cross-browser WebExtensions.",
+  "icons": {
+    "128": "icons/icon.svg",
+    "16": "icons/icon.svg",
+    "48": "icons/icon.svg"
+  },
+  "manifest_version": 3,
+  "name": "WebExtension Template",
+  "options_ui": {
+    "open_in_tab": true,
+    "page": "options/options.html"
+  },
+  "permissions": ["storage"],
+  "version": "0.0.1"
+}

@@ -1,0 +1,78 @@
+body {
+  background-color: #f9f9fb;
+  color: #333;
+  display: flex;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  justify-content: center;
+  margin: 0;
+  padding: 40px;
+}
+
+.container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  padding: 30px;
+  width: 100%;
+}
+
+h1 {
+  color: #222;
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.checkbox-label {
+  align-items: center;
+  display: flex;
+  font-weight: normal;
+  gap: 8px;
+}
+
+input[type='text'] {
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+}
+
+.actions {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+}
+
+button {
+  background-color: #4a90e2;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 10px 20px;
+}
+
+button:hover {
+  background-color: #357abd;
+}
+
+#status-message {
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
