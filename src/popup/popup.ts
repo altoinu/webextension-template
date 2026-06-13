@@ -1,5 +1,3 @@
-import 'webextension-polyfill';
-
 const initializePopup = (): void => {
   const openOptionsBtn = document.getElementById('open-options');
 

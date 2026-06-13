@@ -1,5 +1,3 @@
-import 'webextension-polyfill';
-
 interface UserSettings {
   featureEnabled: boolean;
   username: string;
