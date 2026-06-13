@@ -58,17 +58,17 @@ If you prefer testing functionality outside of the automated VS Code launcher en
 3. **Firefox:** Click the **Inspect** button adjacent to the extension descriptor within `about:debugging` to reveal the standalone Firefox Add-on Toolbox window to trace local storage entries and debug script executions.
 4. **Chrome:** Click the **service worker** or **background page** link on the extension card inside `chrome://extensions/` to launch the standalone Chrome DevTools inspector.
 
-## Automated Versioning & Distribution
+## 📦 Release & Auto-Update Pipeline
 
-This template includes a dynamic release pipeline configured for both unlisted (self-distributed) setups and public storefronts.
+This template includes a dynamic release pipeline configured for unlisted (self-distributed) setups. Browsers like Firefox can automatically check the `updates.json` ledger hosted on the `main` branch of your repository to discover and install new, cryptographically signed releases.
 
-To bump your version and automatically sync your deployment manifests:
+To publish a new auto-updating version:
 
-```bash
-npm run release:patch  # Or :minor, :major
-```
-
-This triggers the native `update-versions.js` lifecycle hook, which bumps the package version, injects the new version into the extension manifest, updates the GitHub release tracking ledger (`updates.json`), and commits the batch to git history automatically.
+1. **Bump, Sync & Push:** Run `npm run release:patch` (or `:minor`, `:major`). This triggers a fully automated lifecycle that increments the package version, syncs `manifest.json` and `updates.json`, commits the changes, creates a git tag, and automatically pushes everything to GitHub via the `postversion` hook.
+2. **Download Clean Source Code:** Go to your GitHub repository's **Releases** page, find the newly generated version tag, and download the **Source code (zip)**. _Note: Using the GitHub release zip is highly recommended over local zipping because it natively excludes your `node_modules/` and compiled `dist/` artifacts, ensuring a clean, compliant payload for reviewers._
+3. **Sign via Mozilla:** Log in to the [Mozilla Add-on Developer Hub](https://addons.mozilla.org/en-US/developers/), upload the Source Code `.zip` artifact to your unlisted extension profile, and wait for the automated review. Download the resulting signed `.xpi` file.
+4. **Distribute:** Edit the GitHub Release for your new version tag and attach the signed `.xpi` file as a binary asset. Ensure the `.xpi` file name perfectly matches the download URL designated in your `updates.json` ledger (e.g., `my-extension-0.1.0.xpi`).
+5. **Auto-Update:** Users' browsers will now silently ping your live `updates.json` ledger, detect the new version, and download the `.xpi` directly from your GitHub release.
 
 ## Scripts Command Index
 
